@@ -47,6 +47,8 @@
 
       
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+
+      source /home/travis/.oh-my-zsh/custom/themes/passion.zsh-theme
     '';
 
     plugins = [ 
@@ -71,7 +73,6 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "passion";
     };
   };
 }
