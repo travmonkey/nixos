@@ -7,6 +7,7 @@
     eza
     pokemon-colorscripts-mac
     fzf
+    pure-prompt
   ];
 
   # Add the folder for custom themes
@@ -43,12 +44,15 @@
         Hyprland
       fi
 
+      autoload -U promptinit; promptinit
+      prompt pure
+
       pokemon-colorscripts -r
 
       
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
-      source /home/travis/.oh-my-zsh/custom/themes/passion.zsh-theme
+      # source /home/travis/.oh-my-zsh/custom/themes/pure.zsh
     '';
 
     plugins = [ 
