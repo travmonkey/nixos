@@ -28,6 +28,8 @@
     mangohud
     uptimed
     lazygit
+    ripgrep
+    fd
   ];
 
   # programs.kitty = lib.mkForce {
