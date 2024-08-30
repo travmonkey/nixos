@@ -29,6 +29,23 @@
     uptimed
     lazygit
   ];
+
+  # programs.kitty = lib.mkForce {
+  #   enable = true;
+  #   theme = "Gruvbox Material Dark Medium";
+  #
+  #   font = {
+  #     name = "MononokiNerdFont";
+  #     size = 13.0;
+  #   };
+  #
+  #   settings = {
+  #     confirm_os_window_close = "0";
+  #     background_opacity = "0.95";
+  #     underline_position = 3;
+  #   };
+  #
+  # };
   
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -62,7 +79,7 @@
   #  /etc/profiles/per-user/travis/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
