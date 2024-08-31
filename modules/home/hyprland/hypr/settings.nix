@@ -17,7 +17,7 @@
     };
 
     decoration = {
-      rounding = 0;
+      rounding = 20;
       active_opacity = 1.0;
       inactive_opacity = 0.95;
       fullscreen_opacity = 1.0;
@@ -26,7 +26,7 @@
       dim_strength = 0.1;
 
       drop_shadow = true;
-      shadow_range = 3;
+      shadow_range = 1;
       shadow_render_power = 1;
       "col.shadow" = "rgb(181926)";
       "col.shadow_inactive" = "0x50000000";
