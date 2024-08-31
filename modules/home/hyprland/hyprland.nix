@@ -5,6 +5,7 @@
     hyprcursor
     hypridle
     hyprlock
+    hyprpicker
     swaynotificationcenter
     rofi-wayland
     blueman
@@ -12,6 +13,10 @@
     networkmanagerapplet
     wlogout
     swww
+    brightnessctl
+    pamixer
+    playerctl
+    cliphist
   #   libsForQT5.qt5ct
   #   libsForQT5.qtstyleplugin-kvantum
   #   kdePackages.qt6ct
@@ -21,6 +26,7 @@
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     enable = true;
+    systemd.enable = true;
 
     settings = {
       "$mod" = "SUPER";
