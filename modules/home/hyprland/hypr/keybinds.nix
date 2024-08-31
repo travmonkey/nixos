@@ -5,7 +5,7 @@
     "$scripts" = "/home/travis/nixos/scripts/hypr";
     # main applications
     "$terminal" = "kitty";
-    "$files" = "kitty -e ranger";
+    "$files" = "nemo";
     "$task_manager" = "kitty -e btop";
 
     bind = [
@@ -82,6 +82,18 @@
       # rofi
       "$mod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
       "$mod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
+      # media controls
+      ", xf86AudioPlayPause, exec, $scripts/MediaCtrl.sh --pause"
+      ", xf86AudioPause, exec, $scripts/MediaCtrl.sh --pause"
+      ", xf86AudioPlay, exec, $scripts/MediaCtrl.sh --pause"
+      ", xf86AudioNext, exec, $scripts/MediaCtrl.sh --nxt"
+      ", xf86AudioPrev, exec, $scripts/MediaCtrl.sh --prv"
+      ", xf86audiostop, exec, $scripts/MediaCtrl.sh --stop"
+      ", xf86audioraisevolume, exec, $scripts/Volume.sh --inc #volume up"
+      ", xf86audiolowervolume, exec, $scripts/Volume.sh --dec #volume down"
+      ", xf86AudioMicMute, exec, $scripts/Volume.sh --toggle-mic #mute mic"
+      ", xf86audiomute, exec, $scripts/Volume.sh --toggle"
+
 
       ## APPLICATIONS
       # browser
@@ -95,21 +107,22 @@
       # files
       "$mod, E, exec, $files"
       # task manager
-      "CTRL ALT, T, exec, $taskmanager"
-      # Pavu
+      "CTRL ALT, T, exec, $task_manager"
+      # Audio control
       "$mod, B, exec, myxer"
+      "$mod SHIFT, B, exec, pavucontrol"
 
       # Screenshot
-      "$mod SHIFT, S, exec, $scripts/scripts/ScreenShot.sh --swappy"
+      "$mod SHIFT, S, exec, $scripts/ScreenShot.sh --swappy"
 
       # Select Wallpaper
-      "$mod, W, exec, $scripts/UserScripts/WallpaperSelect.sh"
+      "$mod, W, exec, $scripts/WallpaperSelect.sh"
 
       # Clipboard Manager
-      "$mod SHIFT, V, exec, $scripts/scripts/ClipManager.sh"
+      "$mod SHIFT, V, exec, $scripts/ClipManager.sh"
 
       # Refresh waybar
-      "$mod ALT, R, exec, $scripts/scripts/Refresh.sh"
+      "$mod ALT, R, exec, $scripts/Refresh.sh"
       
 
     ];
