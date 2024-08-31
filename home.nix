@@ -30,6 +30,8 @@
     lazygit
     ripgrep
     fd
+    librewolf
+    nemo
   ];
 
   # programs.kitty = lib.mkForce {

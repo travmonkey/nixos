@@ -46,10 +46,11 @@
 
   programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
-
+  
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -63,7 +64,7 @@
   ];
 
   networking.hostName = "travis-nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Denver";
@@ -74,10 +75,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.travis = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "video" "input" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
-      librewolf
     ];
   };
   
@@ -97,6 +97,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-gnome
     pavucontrol
     easyeffects
     gtk3
@@ -115,6 +116,8 @@
     vesktop
     myxer
     fastfetch
+    uwufetch
+    owofetch
     jq
     btop
     killall
