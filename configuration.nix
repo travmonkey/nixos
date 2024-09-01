@@ -25,6 +25,8 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Pre load graphics drivers
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   # luks
   boot.initrd.luks.devices = {
@@ -89,8 +91,26 @@
     };
   };
 
+  # Setting up steam and graphics drivers
+  hardware.graphics.enable = true;
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  hardware.graphics.extraPackages = with pkgs; [
+    rocm-opencl-icd
+    rocm-opencl-runtime
+    mesa.drivers
+  ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    gamescopeSession.enable = true;
+  };
+
   programs.zsh.enable = true;
-  programs.steam.enable = true;
   programs.dconf.enable = true;
   services.gnome.at-spi2-core.enable = true;
 
