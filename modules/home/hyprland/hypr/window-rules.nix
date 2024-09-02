@@ -9,17 +9,23 @@
       "float, nwg-look|qt5ct|mpv"
       "float, onedriver|onedriver-launcher"
       "float, eog"
-      "float, pavucontrol"
-      "float, easyeffects"
       "float, zoom"
       "float, rofi"
       "float, yad"
-      # Gamescope onto workspace
+
+      #Audio apps
+      "float, pavucontrol"
+      "float, easyeffects"
+      "center,^(pavucontrol) "
+
+      # Bitwarden
+      "float, ^(.*[Bb]itwarden.*)$"
+      "center, ^(.*[Bb]itwarden.*)$"
+
+      # Gamescope
       "noblur,gamescope"
       "fullscreen,gamescope"
-      "workspace 20,^(gamescope)$"
-      "center,^(pavucontrol) "
-      "workspace 20,^(.*gamescope.*)$"
+      "workspace 20 silent,^(.*gamescope.*)$"
     ];
 
     windowrulev2 = [
@@ -33,9 +39,11 @@
       "opacity 0.9 0.7, class:^(yad)$"
       "opacity 0.9 0.7, class:^(com.obsproject.Studio)$"
       "opacity 0.9 0.7, class:^([Aa]udacious)$"
+
       # Make steam subwindows float
       "float, class:^steam$"
       "tile, class:^steam$, title:^Steam$"
+
       # Picture in Picture related
       "opacity 0.95 0.75,title:^(Picture-in-Picture)$ # for opacity: [focus num] [bg num]"
       "pin,title:^(Picture-in-Picture)$ "

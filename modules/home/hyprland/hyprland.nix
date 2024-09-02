@@ -48,7 +48,6 @@
         "XDG_SESSION_TYPE,wayland"
 
         "MOZ_ENABLE_WAYLAND,1"
-        "MANGOHUD,1"
       ];
     };
     plugins = [
