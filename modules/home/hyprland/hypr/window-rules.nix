@@ -19,6 +19,7 @@
       "fullscreen,gamescope"
       "workspace 20,^(gamescope)$"
       "center,^(pavucontrol) "
+      "workspace 20,^(.*gamescope.*)$"
     ];
 
     windowrulev2 = [
