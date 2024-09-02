@@ -114,10 +114,27 @@
   programs.dconf.enable = true;
   services.gnome.at-spi2-core.enable = true;
 
+  services.xserver.displayManager.lightdm.enable = false;
+  # services.displayManager.sddm.enable = true;
+
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      config = {
+        common.default = ["gtk"];
+        hyprland.default = ["gtk" "hyprland"];
+      };
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-gnome
+    wireplumber
     pavucontrol
     easyeffects
     gtk3
