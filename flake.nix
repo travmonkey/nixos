@@ -22,17 +22,42 @@
     ags.url = "github:Aylur/ags";
 
     # add spicetify
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: rec {
+    legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ] (system:
+      import inputs.nixpkgs {
+        inherit system;
+
+        config.allowUnfree = true;
+      }
+    );
+    nixosConfigurations = {
+      default = nixpkgs.lib.nixosSystem {
+        pkgs = legacyPackages.x86_64-linux;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
     };
+    homeConfigurations = {
+      "travis@nixos" = 
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [ ./home.nix ];
+        };
+      };
+    # nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    #   specialArgs = {inherit inputs;};
+    #   modules = [
+    #     ./configuration.nix
+    #     inputs.home-manager.nixosModules.default
+    #   ];
+    # };
   };
 }
