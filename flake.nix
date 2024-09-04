@@ -21,9 +21,12 @@
     # add ags
     ags.url = "github:Aylur/ags";
 
+    # add spicetify
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
