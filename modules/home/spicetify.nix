@@ -1,15 +1,15 @@
-{ pkgs, lib, spicetify-nix, ... }:
+{ pkgs, lib, inputs, ... }:
 
-let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
-in 
 {
-  imports = [ spicetify-nix.homeManagerModule ];
+  # imports = [ spicetify-nix.homeManagerModules.default ];
 
-  programs.spicetify = 
+  programs.spicetify =
+  let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in
   {
-      enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
-  };
+    enable = true;
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  }
 }
