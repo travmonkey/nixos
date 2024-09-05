@@ -37,7 +37,7 @@
     };
   };
 
-  boot.kernelParams = [ "processor.max_cstate=4" "amd_iomu=soft" "idle=nomwait"];
+  boot.kernelParams = [ "processor.max_cstate=4" "amd_iomu=soft" "idle=nomwait" "intel_pstate=disable"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
     
