@@ -12,7 +12,8 @@
       inputs.home-manager.nixosModules.default
     ];
   
-  # nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfreePredicate = _: true;
 
   nix = {
     package = pkgs.nixFlakes;
@@ -83,14 +84,14 @@
     ];
   };
   
-  # home-manager = {
-  #   # also pass inputs to home-manager modules
-  #   extraSpecialArgs = { inherit inputs; };
-  #   users = {
-  #     "travis" = import ./home.nix;
-  #   };
-  # };
-
+  home-manager = {
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "travis" = import ./home.nix;
+    };
+  };
+  #
   # Setting up steam and graphics drivers
   hardware.graphics.enable = true;
   services.xserver.enable = true;
