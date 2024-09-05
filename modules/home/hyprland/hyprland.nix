@@ -11,7 +11,6 @@
     blueman
     waybar
     networkmanagerapplet
-    wlogout
     swww
     brightnessctl
     pamixer
@@ -27,6 +26,7 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     enable = true;
     systemd.enable = true;
+    xwayland.enable = true;
 
     settings = {
       "$mod" = "SUPER";
@@ -46,6 +46,8 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
+
+        "NIXOS_OZONE_WL,1"
 
         "MOZ_ENABLE_WAYLAND,1"
       ];
