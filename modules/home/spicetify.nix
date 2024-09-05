@@ -1,15 +1,26 @@
 { pkgs, lib, inputs, ... }:
 
 {
-  # imports = [ spicetify-nix.homeManagerModules.default ];
-
   programs.spicetify =
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in
-  {
+  let spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in {
     enable = true;
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
-  }
+
+    theme = spicePkgs.themes.text;
+    colorScheme = "gruvbox";
+
+    enabledExtensions = with spicePkgs.extensions; [
+      trashbin
+      shuffle
+      groupSession
+      skipStats
+      beautifulLyrics
+    ];
+    enabledCustomApps = with spicePkgs.apps; [
+      marketplace
+      betterLibrary
+      newReleases
+      lyricsPlus
+    ];
+  };
 }
