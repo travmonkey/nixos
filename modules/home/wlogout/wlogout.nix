@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -50,6 +50,9 @@
     style = ''
       window {
         font-family: MononokiNerdFont;
+        font-size: 16pt;
+        color: #cdd6f4;
+        background-color: rgba(30, 30, 46, 0.6);
       }
 
       button {
@@ -59,6 +62,7 @@
         background-color: rgba(200, 220, 255, 0);
         animation: gradient_f 20s ease-in infinite;
         border-radius: 80px; /* Increased border radius for a more rounded look */
+        border: 0px solid #ebdbb2;
       }
 
       button:focus {
@@ -67,8 +71,8 @@
       }
 
       button:hover {
-        background-color: #f5bde6; 
-        color: #1e1e2e;
+        background-color: #d65d0e; 
+        color: #282828;
         background-size: 50%;
         margin: 30px;
         border-radius: 80px; 
