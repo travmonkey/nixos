@@ -43,6 +43,11 @@
     fd
     librewolf
     nemo
+    obs-studio
+    peazip
+    zathura
+    ranger
+    qimgv
   ];
 
   # Home Manager can also manage your environment variables through
