@@ -9,7 +9,6 @@
     swaynotificationcenter
     rofi-wayland
     blueman
-    waybar
     networkmanagerapplet
     swww
     brightnessctl
