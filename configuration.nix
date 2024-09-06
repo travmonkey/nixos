@@ -54,13 +54,20 @@
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
   
+  hardware.pulseaudio.enable = false;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
+
+    wireplumber = {
+      enable = true;
+    };
   };
+
 
   fonts.packages = with pkgs; [
     nerdfonts
@@ -121,12 +128,13 @@
   xdg = {
     portal = {
       enable = true;
-      xdgOpenUsePortal = true;
-      config = {
-        common.default = ["gtk"];
-        hyprland.default = ["gtk" "hyprland"];
-      };
+      # xdgOpenUsePortal = true;
+      # config = {
+      #   common.default = ["gtk"];
+      #   hyprland.default = ["gtk" "hyprland"];
+      # };
       extraPortals = [
+        pkgs.xdg-desktop-portal-wlr
         pkgs.xdg-desktop-portal-gtk
       ];
     };
