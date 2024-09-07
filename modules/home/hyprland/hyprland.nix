@@ -6,7 +6,6 @@
     hypridle
     hyprlock
     hyprpicker
-    swaynotificationcenter
     rofi-wayland
     blueman
     networkmanagerapplet
@@ -40,7 +39,7 @@
         "QT_QPA_PLATFORMTHEME,qt5ct  "
         "QT_SCALE_FACTOR,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_STYLE_OVERRIDE,kvantum"
+        # "QT_STYLE_OVERRIDE,kvantum"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_DESKTOP,Hyprland"
