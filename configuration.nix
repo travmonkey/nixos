@@ -150,6 +150,7 @@
     gtk2
     gnutar
     nwg-look
+    libsForQt5.qt5ct
     slurp
     grim
     swappy

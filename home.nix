@@ -48,6 +48,8 @@
     zathura
     ranger
     qimgv
+    heroic
+    qbittorrent
   ];
 
   # Home Manager can also manage your environment variables through
