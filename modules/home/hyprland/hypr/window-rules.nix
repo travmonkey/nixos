@@ -3,7 +3,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     windowrule = [
-      # Random shit
+      # Floating random shit
       "float, org.kde.polkit-kde-authentication-agent-1"
       "float, nm-connection-editor|blueman-manager"
       "float, nwg-look|qt5ct|mpv"
@@ -12,6 +12,7 @@
       "float, zoom"
       "float, rofi"
       "float, yad"
+      "float, nemo"
 
       #Audio apps
       "float, pavucontrol"
