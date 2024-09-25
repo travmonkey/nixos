@@ -9,7 +9,8 @@
     ++[(import ./dunst.nix)]
     ++[(import ./waybar.nix)]
     ++[(import ./mangohud.nix)]
-    ++[(import ./sddm-theme.nix)]
+    ++[(import ./btop.nix)]
+    # ++[(import ./sddm-theme.nix)]
     ++[(import ./ags/ags.nix)]
     ++[(import ./kitty.nix)];
 }
