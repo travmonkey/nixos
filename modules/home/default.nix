@@ -9,6 +9,6 @@
     ++[(import ./dunst.nix)]
     ++[(import ./waybar.nix)]
     ++[(import ./mangohud.nix)]
-    ++[(import ./ags.nix)]
+    ++[(import ./ags/ags.nix)]
     ++[(import ./kitty.nix)];
 }
