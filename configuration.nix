@@ -125,16 +125,20 @@
   services.xserver.displayManager.lightdm.enable = false;
   # services.displayManager.sddm.enable = true;
 
+  services.displayManager.sddm = {
+    enable = false;
+  };
+
   xdg = {
     portal = {
       enable = true;
-      # xdgOpenUsePortal = true;
-      # config = {
-      #   common.default = ["gtk"];
-      #   hyprland.default = ["gtk" "hyprland"];
-      # };
+      xdgOpenUsePortal = true;
+      config = {
+        common.default = ["gtk"];
+        hyprland.default = ["gtk" "hyprland"];
+      };
       extraPortals = [
-        pkgs.xdg-desktop-portal-wlr
+        # pkgs.xdg-desktop-portal-wlr
         pkgs.xdg-desktop-portal-gtk
       ];
     };
@@ -145,6 +149,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    elegant-sddm
+    sddm
     zerotierone
     appimage-run
     pavucontrol
