@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./drives.nix
+      # ./pkgs/sddm-theme.nix
       inputs.home-manager.nixosModules.default
     ];
   
@@ -74,7 +75,7 @@
   ];
 
   networking.hostName = "travis-nixos"; # Define your hostname.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Denver";
@@ -82,13 +83,16 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable RGB control
+  services.hardware.openrgb.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.travis = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
   };
   
   home-manager = {
@@ -123,10 +127,11 @@
   services.gnome.at-spi2-core.enable = true;
 
   services.xserver.displayManager.lightdm.enable = false;
-  # services.displayManager.sddm.enable = true;
 
   services.displayManager.sddm = {
     enable = false;
+    # theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+    theme = "catppuccin-mocha";
   };
 
   xdg = {
@@ -149,7 +154,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    elegant-sddm
+    libgcc
+    libstdcxx5
+    openrgb-with-all-plugins
+    wine
+    winetricks
+    protontricks
+    rar
+    catppuccin-sddm
     sddm
     zerotierone
     appimage-run
@@ -175,7 +187,6 @@
     uwufetch
     owofetch
     jq
-    btop
     killall
     neovim
     vim 
