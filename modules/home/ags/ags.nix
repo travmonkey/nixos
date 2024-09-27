@@ -49,6 +49,9 @@
     gtksourceviewmm
     ddcutil
     xdg-user-dirs
+    pywal
+    dconf
+    yad
 
     # JS stuff
     nodejs_22
