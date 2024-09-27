@@ -27,7 +27,7 @@
     xwayland.enable = true;
 
     settings = {
-      "$mod" = "SUPER";
+      "$mod" = "ALT";
 
       env = [
         "HYPRCURSOR_THEME,Bibata-Modern-Ice"
