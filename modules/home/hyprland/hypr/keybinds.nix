@@ -67,6 +67,19 @@
       "$mod, comma, workspace, m-1"
       # Move to gaming workspace
       "$mod, G, workspace, 20"
+      "$mod SHIFT, G, movetoworkspace, 20"
+
+      # Toggle special workspace
+      "$mod, M, togglespecialworkspace"
+      # "$mod SHIFT, M movetoworkspace, special"
+
+      ## END-4 Widgets
+      "$mod, A, exec, ags -t 'sideleft'"
+      "$mod, D, exec, ags -t 'sideright'"
+      "$mod, N, exec, ags run-js 'openMusicControls.value = (!mpris.getPlayer() ? false : !openMusicControls.value);' # Toggle music controls"
+      "$mod, Tab, exec, ags -t 'overview'"
+      "Ctrl+$mod, Slash, exec, pkill anyrun || anyrun # Toggle fallback launcher: anyrun"
+      "$mod, Slash, exec, ags run-js 'openColorScheme.value = true; Utils.timeout(2000, () => openColorScheme.value = false);'"
 
       ## STANDARD CONTROLS
       # fullscreen
@@ -82,15 +95,16 @@
       # rofi
       "$mod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
       "$mod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
+
       # media controls
-      ", xf86AudioPlayPause, exec, $scripts/MediaCtrl.sh --pause"
-      ", xf86AudioPause, exec, $scripts/MediaCtrl.sh --pause"
-      ", xf86AudioPlay, exec, $scripts/MediaCtrl.sh --pause"
-      ", xf86AudioNext, exec, $scripts/MediaCtrl.sh --nxt"
-      ", xf86AudioPrev, exec, $scripts/MediaCtrl.sh --prv"
-      ", xf86audiostop, exec, $scripts/MediaCtrl.sh --stop"
-      ", xf86audioraisevolume, exec, $scripts/Volume.sh --inc #volume up"
-      ", xf86audiolowervolume, exec, $scripts/Volume.sh --dec #volume down"
+      ", xf86AudioPlayPause, exec, playerctl play-pause"
+      ", xf86AudioPause, exec, playerctl play-pause"
+      ", xf86AudioPlay, exec, playerctl play-pause"
+      ", xf86AudioNext, exec, playerctl next"
+      ", xf86AudioPrev, exec, playerctl previous"
+      ", xf86audiostop, exec, playerctl stop"
+      ", xf86audioraisevolume, exec, pamixer -i 5"
+      ", xf86audiolowervolume, exec, pamixer -d 5"
       ", xf86AudioMicMute, exec, $scripts/Volume.sh --toggle-mic #mute mic"
       ", xf86audiomute, exec, $scripts/Volume.sh --toggle"
 
@@ -101,7 +115,7 @@
       # discord
       "$mod SHIFT, E, exec, vesktop"
       # steam
-      "ALT, S, exec, steam"
+      "SUPER, S, exec, steam"
       # terminal
       "$mod, Q, exec, $terminal"
       # files
@@ -121,11 +135,13 @@
       # Clipboard Manager
       "$mod SHIFT, V, exec, $scripts/ClipManager.sh"
 
-      # Refresh waybar
-      "$mod ALT, R, exec, $scripts/Refresh.sh"
-      
 
     ];
+    
+    bindr = [
+      "Ctrl+Super, R, exec, killall .ags-wrapped ydotool; ags & # Restart widgets"
+    ];
+
     bindm = [
       # Mouse keybinds
       "$mod, mouse:272, movewindow"

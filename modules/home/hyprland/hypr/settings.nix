@@ -13,7 +13,10 @@
     };
     
     dwindle = {
-      pseudotile = "yes";
+      preserve_split = true;
+      pseudotile = true;
+      smart_split = true;
+      smart_resizing = true;
     };
 
     decoration = {
@@ -55,6 +58,7 @@
         "bounce, 1.1, 1.6, 0.1, 0.85"
         "sligshot, 1, -1, 0.15, 1.25"
         "nice, 0, 6.9, 0.5, -4.20"
+        "md3_decel, 0.05, 0.7, 0.1, 1"
       ];
 
       animation = [
@@ -64,6 +68,8 @@
         "fade, 1, 5, overshot"
         "workspaces, 1, 5, wind"
         "windows, 1, 5, bounce, popin"
+
+        "specialWorkspace, 1, 3, md3_decel, slidevert"
       ];
     };
 

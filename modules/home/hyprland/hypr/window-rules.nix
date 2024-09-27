@@ -12,12 +12,31 @@
       "float, zoom"
       "float, rofi"
       "float, yad"
+
+      # settings
+      "float, org.gnome.Settings"
+      "size 35% 50%, org.gnome.Settings"
+
+      # file explorer
       "float, nemo"
+      "size 35% 50%, nemo"
+
+      # file picker
+      "float, xdg-desktop-portal-gtk"
+      "size 35% 50%, xdg-desktop-portal-gtk"
+
+      # Bluetooth
+      "float, ^(.*blueberry.*)$"
+      "size 35% 50%, ^(.*blueberry.*)$"
+
 
       #Audio apps
       "float, pavucontrol"
       "float, easyeffects"
       "center,^(pavucontrol) "
+      "size 35% 50%, pavucontrol"
+      "size 35% 50%, easyeffects"
+      "size 35% 0%, mixyr"
 
       # Bitwarden
       "float, ^(.*[Bb]itwarden.*)$"

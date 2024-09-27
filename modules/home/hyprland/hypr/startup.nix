@@ -8,12 +8,9 @@
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
       # starup apps
-      "waybar &"
-      "swaync &"
+      "ags &"
       "hyprpm reload"
-      "blueman-applet & "
       "hypridle &"
-      "nm-applet &"
 
       # wallpapers
       "swww query || swww-daemon"
