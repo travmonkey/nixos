@@ -18,6 +18,7 @@
       confirm_os_window_close = "0";
       background_opacity = "1";
       underline_position = 3;
+      enable_audio_bell = "no";
     };
 
   };

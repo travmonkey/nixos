@@ -47,7 +47,7 @@
       autoload -U promptinit; promptinit
       prompt pure
 
-      pokemon-colorscripts -r
+      # pokemon-colorscripts -r
 
       
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
