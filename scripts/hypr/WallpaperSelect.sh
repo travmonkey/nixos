@@ -77,6 +77,10 @@ main() {
 
   if [[ $pic_index -ne -1 ]]; then
     swww img -o $current_monitor "${wallDIR}/${PICS[$pic_index]}" $SWWW_PARAMS
+    if [[ $current_monitor == DP-1 ]]; then
+      rm /home/travis/.current_wallpaper
+      ln -s ${wallDIR}/${PICS[$pic_index]} /home/travis/.current_wallpaper
+    fi
   else
     echo "Image not found."
     exit 1
