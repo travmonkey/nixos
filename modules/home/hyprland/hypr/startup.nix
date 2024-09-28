@@ -9,8 +9,8 @@
 
       # starup apps
       "ags &"
-      "hyprpm reload"
       "hypridle &"
+      "hyprpm reload"
 
       # wallpapers
       "swww query || swww-daemon"
