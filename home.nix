@@ -48,6 +48,7 @@
   # environment.
   home.packages = with pkgs; [
     # teams
+    vivaldi
     bitwarden-desktop
     asdf-vm
     gamemode
