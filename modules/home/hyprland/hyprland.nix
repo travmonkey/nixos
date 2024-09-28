@@ -8,7 +8,7 @@
     hyprpicker
     rofi-wayland
     blueman
-    networkmanagerapplet
+    # networkmanagerapplet
     swww
     brightnessctl
     pamixer
