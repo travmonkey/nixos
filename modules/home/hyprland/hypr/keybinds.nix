@@ -95,6 +95,10 @@
       # rofi
       "$mod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
       "$mod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
+      # pin
+      "$mod, P, pin"
+      # rofi beats
+      "$mod SHIFT, M, exec, $scripts/RofiBeats.sh"
 
       # media controls
       ", xf86AudioPlayPause, exec, playerctl play-pause"
@@ -105,8 +109,8 @@
       ", xf86audiostop, exec, playerctl stop"
       ", xf86audioraisevolume, exec, pamixer -i 5"
       ", xf86audiolowervolume, exec, pamixer -d 5"
-      ", xf86AudioMicMute, exec, $scripts/Volume.sh --toggle-mic #mute mic"
-      ", xf86audiomute, exec, $scripts/Volume.sh --toggle"
+      # ", xf86AudioMicMute, exec, $scripts/Volume.sh --toggle-mic #mute mic"
+      # ", xf86audiomute, exec, $scripts/Volume.sh --toggle"
 
 
       ## APPLICATIONS
