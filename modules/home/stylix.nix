@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  stylix.enable = true;
-  stylix.image = ~/Pictures/wallpapers/rayquaza.png;
-
-  # stylix.polarity = "dark";
-
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-
-  stylix.target.hyprland.enable = false;
+  stylix.targets.neovim.enable = false;
+  stylix.targets.hyprland.enable = false;
+  stylix.targets.vesktop.enable = false;
+  stylix.targets.gtk.enable = false;
+  stylix.targets.rofi.enable = false;
+  stylix.targets.mangohud.enable = false;
 }
