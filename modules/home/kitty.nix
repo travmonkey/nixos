@@ -7,7 +7,6 @@
 
   programs.kitty = lib.mkForce {
     enable = true;
-    theme = "Gruvbox Material Dark Medium";
 
     font = {
       name = "MononokiNerdFont";
