@@ -9,7 +9,7 @@
     # ++[(import ./dunst.nix)]
     ++[(import ./waybar.nix)]
     ++[(import ./mangohud.nix)]
-    ++[(import ./stylix.nix)]
+    # ++[(import ./stylix.nix)]
     ++[(import ./ags/ags.nix)]
     ++[(import ./kitty.nix)];
 }
