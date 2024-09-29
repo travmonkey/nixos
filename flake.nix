@@ -21,6 +21,9 @@
     # add ags
     ags.url = "github:Aylur/ags";
 
+    # add stylix
+    stylix.url = "github:danth/stylix";
+
     # add spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
