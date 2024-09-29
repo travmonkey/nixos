@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,6 +7,7 @@
 
   programs.kitty = lib.mkForce {
     enable = true;
+    theme = "Gruvbox Material Dark Medium";
 
     font = {
       name = "MononokiNerdFont";
