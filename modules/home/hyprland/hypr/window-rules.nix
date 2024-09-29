@@ -31,9 +31,7 @@
 
       # image viewer / qimgv
       "float, ^(.*qimgv.*)$"
-      "size 35% 50%, ^(.*qimgv.*)$"
-
-
+      "size 35% 50%, qimgv"
 
       #Audio apps
       "float, pavucontrol"
