@@ -1,14 +1,15 @@
 # My Current, Maintained, NixOs configs
 
 # 󰋽  Information
+Compositor: Hyprland  
+Terminal: Kitty  
+Shell: ZSH  
 Bar and widgets: Using a modified [end-4](https://github.com/end-4/dots-hyprland) ags config  
+Wallpaper: swww  
 App Launcher: Rofi  
 File Explorer: Ranger + Nemo  
 Image Viewer: qimgv  
 Audio: Pipewire + Wireplumber  
-Terminal: Kitty  
-Shell: ZSH  
-
 
 #    Requirements
 - You must be on NixOS
@@ -67,5 +68,7 @@ sudo nixos-rebuild switch --flake .#<hostname>
 
 This should switch you into my flake and backup your dotfiles if they aren't  
 managed by home-manager already.
+
+Look into modules/home/hyprland/hypr/keybinds.nix for my keybinds until I create a cheat-sheet.
 
 Hope you enjoy!
