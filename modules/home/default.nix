@@ -10,6 +10,6 @@
     ++[(import ./waybar.nix)]
     ++[(import ./mangohud.nix)]
     # ++[(import ./stylix.nix)]
-    ++[(import ./ags/ags.nix)]
+    ++[(import ./ags.nix)]
     ++[(import ./kitty.nix)];
 }
