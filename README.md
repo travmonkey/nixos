@@ -1,18 +1,16 @@
 # My Current, Maintained, NixOs configs
 
-# 󰋽 Information
----
-Bar and widgets: Using a modified [end-4's](https://github.com/end-4/dots-hyprland) ags config
-App Launcher: Rofi
-File Explorer: Ranger + Nemo
-Image Viewer: qimgv
-Audio: Pipewire + Wireplumber
-Terminal: Kitty
-Shell: ZSH
+# 󰋽  Information
+Bar and widgets: Using a modified [end-4's](https://github.com/end-4/dots-hyprland) ags config  
+App Launcher: Rofi  
+File Explorer: Ranger + Nemo  
+Image Viewer: qimgv  
+Audio: Pipewire + Wireplumber  
+Terminal: Kitty  
+Shell: ZSH  
 
 
-#   Requirements
----
+#    Requirements
 - You must be on NixOS
 - Flakes must be enabled
 
