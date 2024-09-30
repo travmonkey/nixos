@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    zsh
     bc
     oh-my-zsh
     eza
