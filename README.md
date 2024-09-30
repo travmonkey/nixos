@@ -1,7 +1,7 @@
 # My Current, Maintained, NixOs configs
 
 # 󰋽  Information
-Bar and widgets: Using a modified [end-4's](https://github.com/end-4/dots-hyprland) ags config  
+Bar and widgets: Using a modified [end-4](https://github.com/end-4/dots-hyprland) ags config  
 App Launcher: Rofi  
 File Explorer: Ranger + Nemo  
 Image Viewer: qimgv  
@@ -43,7 +43,7 @@ cp -r hosts/default hosts/<your-hostname>
 nixos-generate-config --show-hardware-config > hosts/<your-hostname>/hardware-configuration.nix
 ```
 
-### *Important* Quick Edits to the config
+### *Important* - Quick Edits to the config
 
 Make sure that you edit your configuration.nix to remove the luks decryption
 ```nix
@@ -65,7 +65,7 @@ NIX_CONFIG="experimental-features = nix-command flakes"
 sudo nixos-rebuild switch --flake .#<hostname>
 ```
 
-This should switch you into my flake and backup your dotfiles if they aren't managed
-by home-manager already.
+This should switch you into my flake and backup your dotfiles if they aren't  
+managed by home-manager already.
 
-Home you enjoy!
+Hope you enjoy!
