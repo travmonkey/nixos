@@ -14,8 +14,8 @@
   home.homeDirectory = "/home/travis";
 
   home.file = {
-    ".config/ags".source = ./unmanagedDots/ags;
-    ".config/rofi".source = ./unmanagedDots/rofi;
+    ".config/ags".source = ../../unmanagedDots/ags;
+    ".config/rofi".source = ../../unmanagedDots/rofi;
   };
 
   gtk.enable = true;
@@ -23,14 +23,14 @@
   gtk.cursorTheme.package = pkgs.bibata-cursors;
   gtk.cursorTheme.name = "Bibata-Modern-Ice";
 
-  gtk.theme.package = pkgs.adw-gtk3;
-  gtk.theme.name = "adw-gtk3";
+  # gtk.theme.package = pkgs.gruvbox-dark-gtk;
+  # gtk.theme.name = "gruvbox-dark-gtk";
 
-  gtk.iconTheme.package = pkgs.gruvbox-plus-icons;
-  gtk.iconTheme.name = "Gruvbox-Plus-Dark";
+  # gtk.iconTheme.package = pkgs.colloid-icon-theme;
+  # gtk.iconTheme.name = "colloid-icon-theme";
 
   qt.enable = true;
-  qt.platformTheme = "gtk";
+  qt.platformTheme.name = "gtk";
   qt.style.name = "adwaita-dark";
 
   nixpkgs = {
@@ -52,7 +52,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # teams
+    gimp
+    bemoji
     qdirstat
     btop
     vivaldi
@@ -69,7 +70,6 @@
     obs-studio
     peazip
     zathura
-    ranger
     qimgv
     heroic
     qbittorrent
