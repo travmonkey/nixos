@@ -1,5 +1,10 @@
 # My Current, Maintained, NixOs configs
 
+<p align="center">
+    <img alt="overview" src="https://github.com/travmonkey/nixos/blob/main/screenshots/overview.png">
+    <img alt="terminals" src="https://github.com/travmonkey/nixos/blob/main/screenshots/terminalShowcase.png">
+</p>
+
 # 󰋽  Information
 Compositor: Hyprland  
 Terminal: Kitty  
@@ -17,16 +22,16 @@ Audio: Pipewire + Wireplumber
 
 ## 󰇚 Install
 
-Ensure git & vim are installed if they aren't already
-Either add them to your current config
+Ensure git & vim are installed if they aren't already.  
+Either add them to your current config:
 ```nix
 environment.systemPackages = {
     pkgs.git
     pkgs.vim
 }
 ```
-Or you can temporarily add them with nix-shell (note: do NOT use nix-env to install packages)
-```nix
+Or you can temporarily add them with nix-shell: (note: do NOT use nix-env to install packages)
+```sh
 nix-shell -p git vim
 ```
 
@@ -40,6 +45,7 @@ cd nixos
 
 Enter the repo and build a directory and hardware config for you
 ```sh
+# Copy default to a new host
 cp -r hosts/default hosts/<your-hostname>
 # Remove my extra drives config
 rm hosts/<your-hostname>/drives.nix
@@ -58,8 +64,18 @@ Make sure that you edit your configuration.nix to remove the luks decryption
     };
   };
 ```
-It is also a good idea to change all instances of "travis" to your name
-
+It is also a good idea to change all instances of "travis" to your name.  
+This *needs* to be done in flake.nix as well:  
+```nix
+outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+nixosConfigurations.<your-hostname> = nixpkgs.lib.nixosSystem {
+  specialArgs = {inherit inputs;};
+  modules = [
+    ./hosts/<your-hostname>/configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
+};
+```
 ### Switch to flake
 
 ```sh
