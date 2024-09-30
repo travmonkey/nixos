@@ -4,7 +4,7 @@
 
   imports = 
     [
-      (./modules/home/default.nix)
+      (../../modules/home/default.nix)
       inputs.spicetify-nix.homeManagerModules.default
     ];
 
