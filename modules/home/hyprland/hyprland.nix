@@ -8,17 +8,13 @@
     hyprpicker
     rofi-wayland
     blueman
-    # networkmanagerapplet
     swww
     brightnessctl
     pamixer
     playerctl
     cliphist
-  #   libsForQT5.qt5ct
-  #   libsForQT5.qtstyleplugin-kvantum
-  #   kdePackages.qt6ct
-  #   kvantum
   ];
+
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -39,7 +35,6 @@
         "QT_QPA_PLATFORMTHEME,qt5ct  "
         "QT_SCALE_FACTOR,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        # "QT_STYLE_OVERRIDE,kvantum"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_DESKTOP,Hyprland"

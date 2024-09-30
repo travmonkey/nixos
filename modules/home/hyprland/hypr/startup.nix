@@ -7,6 +7,9 @@
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
+      # Set cursor
+      "hyprctl setcursor Bibata-Modern-Ice 24"
+
       # starup apps
       "ags &"
       "hypridle &"
@@ -21,11 +24,12 @@
       # Equalizer
       "easyeffects --gapplication-service &"
 
-      #clipboard manager
+      # clipboard manager
       "wl-paste --type text --watch cliphist store "
 
       # Move mouse to center monitor
       "hyprctl dispatch workspace 11"
+
     ];
   };
 }

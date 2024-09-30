@@ -61,13 +61,18 @@
       "$mod SHIFT, bracketright, movetoworkspace, +1"
       "$mod, bracketleft, workspace, -1"
       "$mod, bracketright, workspace, +1"
-      "$mod, mouse_down, workspace, m-1"
-      "$mod, mouse_up, workspace, m+1"
       "$mod, period, workspace, m+1"
       "$mod, comma, workspace, m-1"
+
       # Move to gaming workspace
       "$mod, G, workspace, 20"
       "$mod SHIFT, G, movetoworkspace, 20"
+
+      # Scroll wheel navigation
+      "$mod SHIFT, mouse_down, split-movetoworkspace, m-1"
+      "$mod SHIFT, mouse_up, split-movetoworkspace, m+1"
+      "$mod, mouse_down, workspace, m-1"
+      "$mod, mouse_up, workspace, m+1"
 
       # Toggle special workspace
       "$mod, M, togglespecialworkspace"
