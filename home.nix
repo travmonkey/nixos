@@ -20,6 +20,10 @@
   #
   # gtk.theme.package = pkgs.adw-gtk3;
   # gtk.theme.name = "adw-gtk3";
+  home.file = {
+    ".config/ags".source = ./unmanagedDots/ags;
+    ".config/rofi".source = ./unmanagedDots/rofi;
+  };
 
   # gtk.iconTheme.package = pkgs.gruvbox-plus-icons;
   # gtk.iconTheme.name = "Gruvbox-Plus-Dark";
