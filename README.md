@@ -41,6 +41,8 @@ cd nixos
 Enter the repo and build a directory and hardware config for you
 ```sh
 cp -r hosts/default hosts/<your-hostname>
+# Remove my extra drives config
+rm hosts/<your-hostname>/drives.nix
 nixos-generate-config --show-hardware-config > hosts/<your-hostname>/hardware-configuration.nix
 ```
 
@@ -69,6 +71,8 @@ sudo nixos-rebuild switch --flake .#<hostname>
 This should switch you into my flake and backup your dotfiles if they aren't  
 managed by home-manager already.
 
-Look into modules/home/hyprland/hypr/keybinds.nix for my keybinds until I create a cheat-sheet.
+Look into ```modules/home/hyprland/hypr/keybinds.nix``` for my keybinds until I create a cheat-sheet.  
+Look into ```modules/home/hyprland/hypr/monitors.nix``` for monitor configurations.  
+Also look into ```unmanagedDots/ags/user_options.js``` for quick ags settings
 
 Hope you enjoy!
