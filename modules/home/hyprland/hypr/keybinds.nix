@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
@@ -64,6 +64,9 @@
       "$mod, period, workspace, m+1"
       "$mod, comma, workspace, m-1"
 
+      "$mod, TAB, workspace, +1"
+      "$mod SHIFT, TAB, workspace, -1"
+
       # Move to gaming workspace
       "$mod, G, workspace, 20"
       "$mod SHIFT, G, movetoworkspace, 20"
@@ -82,7 +85,7 @@
       "$mod, A, exec, ags -t 'sideleft'"
       "$mod, D, exec, ags -t 'sideright'"
       "$mod, N, exec, ags run-js 'openMusicControls.value = (!mpris.getPlayer() ? false : !openMusicControls.value);' # Toggle music controls"
-      "$mod, Tab, exec, ags -t 'overview'"
+      "SUPER, Tab, exec, ags -t 'overview'"
       "Ctrl+$mod, Slash, exec, pkill anyrun || anyrun # Toggle fallback launcher: anyrun"
       "$mod, Slash, exec, ags run-js 'openColorScheme.value = true; Utils.timeout(2000, () => openColorScheme.value = false);'"
 
