@@ -21,8 +21,9 @@
 
     shellAliases = {
       # update and rebuild commands
-      update = "nix flake update /home/travis/nixos" ;
-      rebuild = "sudo nixos-rebuild switch --flake /home/travis/nixos/#default";
+      # update = "nix flake update /home/travis/nixos" ;
+      # rebuild = "sudo nixos-rebuild switch --flake /home/travis/nixos/#default";
+      # Don't need these any more as I switched to nh
       # eza for ls replacement:
       lr = "eza -l --git --no-filesize --icons=always --no-time";
       lt = "eza -l --git --no-filesize --icons=always --no-time --tree --level=2";
