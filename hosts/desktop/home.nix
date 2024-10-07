@@ -18,6 +18,30 @@
     ".config/rofi".source = ../../unmanagedDots/rofi;
   };
 
+  # Default xdg applications
+  xdg = {
+    enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "image/jpeg" = "qimgv.desktop";
+        "image/png" = "qimgv.desktop";
+        "image/gif" = "qimgv.desktop";
+        "image/bmp" = "qimgv.desktop";
+        "image/svg+xml" = "qimgv.desktop";
+        "image/webp" = "qimgv.desktop";
+
+        "video/mp4" = "mpv.desktop";
+        "video/x-matroska" = "mpv.desktop";
+        "video/x-msvideo" = "mpv.desktop";
+        "video/x-flv" = "mpv.desktop";
+        "video/quicktime" = "mpv.desktop";
+        "video/x-ms-wmv" = "mpv.desktop";
+        "video/webm" = "mpv.desktop";
+      };
+    };
+  };
+
   gtk.enable = true;
 
   gtk.cursorTheme.package = pkgs.bibata-cursors;
