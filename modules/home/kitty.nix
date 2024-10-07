@@ -10,8 +10,8 @@
     theme = "Gruvbox Material Dark Medium";
 
     font = {
-      name = "MononokiNerdFont";
-      size = 13.0;
+      name = "VictorMonoNerdFont";
+      size = 14.0;
     };
 
     settings = {
@@ -19,6 +19,8 @@
       background_opacity = "1";
       underline_position = 3;
       enable_audio_bell = "no";
+
+      font_features = "OpenType Italics";
     };
 
   };
