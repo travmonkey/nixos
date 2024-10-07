@@ -71,6 +71,7 @@
 
   fonts.packages = with pkgs; [
     nerdfonts
+    noto-fonts-emoji
   ];
 
   networking.hostName = "travis-nixos"; # Define your hostname.
@@ -90,8 +91,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
-    # packages = with pkgs; [
-    # ];
   };
   
   home-manager = {
@@ -101,7 +100,7 @@
       "travis" = import ./home.nix;
     };
   };
-  #
+  
   # Setting up steam and graphics drivers
   hardware.graphics.enable = true;
   services.xserver.enable = true;
@@ -142,7 +141,6 @@
         hyprland.default = ["gtk" "hyprland"];
       };
       extraPortals = [
-        # pkgs.xdg-desktop-portal-wlr
         pkgs.xdg-desktop-portal-gtk
       ];
     };
@@ -158,49 +156,81 @@
 
   services.zerotierone.enable = true;
 
+  environment.sessionVariables = {
+    FLAKE = "/home/travis/nixos";
+  };
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    noto-fonts-emoji
+    # necessary
+    git
+    curl
+    wget
+    nh
+
+    # c/c++
+    gcc
+    gcc-arm-embedded
     libgcc
+    libcxx
     libstdcxx5
-    openrgb-with-all-plugins
+    binutils
+    gnumake
+    cmake
+    extra-cmake-modules
+    glxinfo
+
+    # wine
     wine
     winetricks
     protontricks
+
+    # compressing/extracting
     rar
-    catppuccin-sddm
-    sddm
-    zerotierone
-    appimage-run
-    pavucontrol
-    easyeffects
+    gnutar
+    unzip
+
+    # fonts
+
+    # gtk / qt 
     gtk3
     gtk2
-    gnutar
     nwg-look
     libsForQt5.qt5ct
-    slurp
-    grim
-    swappy
-    wl-clipboard
+
+    # audio control
+    pavucontrol
+    easyeffects
     spotify
-    gcc
-    python3
-    unzip
-    nodejs_22
-    vesktop
     myxer
+
+    # fetchers
     fastfetch
     uwufetch
     owofetch
-    jq
-    killall
+
+    # network
+    protonvpn-gui
+    zerotierone
+
+    # login managers
+    catppuccin-sddm
+    sddm
+
+    # development
+    python3
+    nodejs_22
+
+    # editors
     neovim
     vim 
-    wget
-    git
-    glxinfo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -222,29 +252,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
 

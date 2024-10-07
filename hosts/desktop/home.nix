@@ -47,8 +47,8 @@
   gtk.cursorTheme.package = pkgs.bibata-cursors;
   gtk.cursorTheme.name = "Bibata-Modern-Ice";
 
-  # gtk.theme.package = pkgs.gruvbox-dark-gtk;
-  # gtk.theme.name = "gruvbox-dark-gtk";
+  gtk.theme.package = pkgs.gruvbox-gtk-theme;
+  gtk.theme.name = "Gruvbox-Dark";
 
   # gtk.iconTheme.package = pkgs.colloid-icon-theme;
   # gtk.iconTheme.name = "colloid-icon-theme";
@@ -63,6 +63,17 @@
       allowUnfreePredicate = (_: true);
     };
   };
+  
+  xdg.desktopEntries = {
+    "kicad" = {
+      name = "KiCad (xwayland)";
+      exec = "env QT_QPA_PLATFORM=xwayland kicad";
+      terminal = false;
+      icon = "kicad";
+      categories = ["Development" "Electronics"];
+    };
+  };
+
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -76,6 +87,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    font-manager
+    vesktop
     gimp
     bemoji
     qdirstat
@@ -100,6 +113,12 @@
     libreoffice
     kicad
     mpv
+
+    # tools
+    via
+    openrgb-with-all-plugins
+    appimage-run
+    killall
   ];
 
   # Home Manager can also manage your environment variables through
