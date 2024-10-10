@@ -154,6 +154,12 @@
       "Ctrl+Super, R, exec, killall .ags-wrapped ydotool; ags & # Restart widgets"
     ];
 
+    bindle = [
+      "$mod CTRL, bracketright, exec, ags run-js 'brightness.screen_value += 0.05; indicator.popup(1);'"
+      "$mod CTRL, bracketleft, exec, ags run-js 'brightness.screen_value -= 0.05; indicator.popup(1);'"
+
+    ];
+
     bindm = [
       # Mouse keybinds
       "$mod, mouse:272, movewindow"
