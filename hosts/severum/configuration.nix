@@ -41,6 +41,8 @@
   # Enable ssh
   services.openssh.enable = true;
 
+  programs.zsh.enable = true;
+
   programs.nh = {
     enable = true;
     clean.enable = true;
