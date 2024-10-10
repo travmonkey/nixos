@@ -2,7 +2,7 @@
 
 {
   imports = 
-    ++[(import ./zsh.nix)]
+    [(import ./zsh.nix)]
     ++[(import ./ranger.nix)]
-    ++[(import ./neovim.nix)]
+    ++[(import ./neovim.nix)];
 }

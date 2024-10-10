@@ -1,10 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
 
   imports = 
     [
-      # (../../modules/home/default.nix)
+      (../../modules/home/severum.nix)
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -32,6 +32,10 @@
   # environment.
   home.packages = with pkgs; [
   ];
+
+  home.file.".zshrc".text = ''
+    export ZSH_CUSTOM="${config.home.homeDirectory}/.oh-my-zsh/custom"
+  '';
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
