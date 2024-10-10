@@ -5,6 +5,7 @@
   # Attempting to keep this low in favor of using shell.nix, but it gets quite annoying
   # entering a shell.nix for frequent languages
   home.packages = with pkgs; [
+    lazygit
     neovim
 
     # Language Servers

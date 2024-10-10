@@ -1,5 +1,5 @@
 # Main configuration for server machine
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   imports = 
@@ -33,7 +33,7 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   environment.sessionVariables = {
-    FLAKE = "/home/travis/nixos";
+    FLAKE = "/home/aphelios/nixos";
   };
 
   virtualisation.docker.enable = true;
@@ -48,6 +48,16 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 3";
   };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "aphelios" = import ./home.nix;
+    };
+    backupFileExtension = "backup";
+  };
+
+  security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
     nh
