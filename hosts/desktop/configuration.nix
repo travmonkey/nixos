@@ -89,7 +89,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.travis = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "docker" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
   
@@ -166,6 +166,8 @@
     clean.extraArgs = "--keep-since 7d --keep 3";
   };
 
+  virtualisation.docker.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -227,6 +229,9 @@
     # development
     python3
     nodejs_22
+    # dotnetCorePackages.sdk_9_0
+    # steamcmd
+    mono
 
     # editors
     neovim
