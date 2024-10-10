@@ -24,11 +24,10 @@
     shell = pkgs.zsh;
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # boot.kernelParams = [ "processor.max_cstate=4" "amd_iomu=soft" "idle=nomwait"];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
 
   networking.hostName = "severum"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
