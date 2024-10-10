@@ -1,5 +1,5 @@
 # Main configuration for server machine
-{ pkgs, inputs, config, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = 
