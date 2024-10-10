@@ -38,6 +38,12 @@
         inputs.stylix.nixosModules.stylix
       ];
     };
-
+    nixosConfigurations.severum = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/severum/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
   };
 }
