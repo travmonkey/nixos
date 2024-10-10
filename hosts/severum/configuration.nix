@@ -59,6 +59,8 @@
 
   security.sudo.wheelNeedsPassword = false;
 
+  services.zerotierone.enable = true;
+
   environment.systemPackages = with pkgs; [
     nh
     vim
@@ -66,6 +68,7 @@
     git
     wget
     curl
+    zerotierone
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";
