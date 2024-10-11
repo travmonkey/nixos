@@ -2,5 +2,6 @@
 
 {
   imports = 
-    [(import ./hyprland.nix)];
+    [(import ./hyprland.nix)]
+    ++[(import ./gaming.nix)];
 }

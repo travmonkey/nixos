@@ -13,6 +13,7 @@
   ];
 
   hyprland.enable = true;
+  gaming.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowUnfreePredicate = _: true;
@@ -52,14 +53,6 @@
       [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
-  # programs.hyprland = {
-  #   enable = true;
-  #   xwayland.enable = true;
-  #   package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  #   portalPackage =
-  #     inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  # };
-
   hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
@@ -85,7 +78,7 @@
   services.printing.enable = true;
 
   # Enable RGB control
-  services.hardware.openrgb.enable = true;
+  # services.hardware.openrgb.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.travis = {
@@ -108,26 +101,26 @@
   };
 
   # Setting up steam and graphics drivers
-  hardware.graphics.enable = true;
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  # hardware.graphics.enable = true;
+  # services.xserver.enable = true;
+  # services.xserver.videoDrivers = [ "amdgpu" ];
+  #
+  # hardware.graphics.extraPackages = with pkgs; [
+  #   rocm-opencl-icd
+  #   rocm-opencl-runtime
+  #   mesa.drivers
+  # ];
 
-  hardware.graphics.extraPackages = with pkgs; [
-    rocm-opencl-icd
-    rocm-opencl-runtime
-    mesa.drivers
-  ];
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall =
-      true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall =
-      true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall =
-      true; # Open ports in the firewall for Steam Local Network Game Transfers
-    gamescopeSession.enable = true;
-  };
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall =
+  #     true; # Open ports in the firewall for Steam Remote Play
+  #   dedicatedServer.openFirewall =
+  #     true; # Open ports in the firewall for Source Dedicated Server
+  #   localNetworkGameTransfers.openFirewall =
+  #     true; # Open ports in the firewall for Steam Local Network Game Transfers
+  #   gamescopeSession.enable = true;
+  # };
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;
@@ -140,18 +133,6 @@
     # theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
     theme = "catppuccin-mocha";
   };
-
-  # xdg = {
-  #   portal = {
-  #     enable = true;
-  #     xdgOpenUsePortal = true;
-  #     config = {
-  #       common.default = [ "gtk" ];
-  #       hyprland.default = [ "gtk" "hyprland" ];
-  #     };
-  #     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #   };
-  # };
 
   # stylix.enable = true;
   home-manager.backupFileExtension = "backup";
