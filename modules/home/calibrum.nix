@@ -6,6 +6,7 @@
     ++[(import ./zsh.nix)]
     ++[(import ./wlogout/wlogout.nix)]
     ++[(import ./spicetify.nix)]
+    ++[(import ./ssh.nix)]
     # ++[(import ./dunst.nix)]
     ++[(import ./waybar.nix)]
     ++[(import ./mangohud.nix)]
