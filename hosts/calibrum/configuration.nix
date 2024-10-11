@@ -12,6 +12,8 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  hyprland.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowUnfreePredicate = _: true;
 
