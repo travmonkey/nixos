@@ -60,6 +60,19 @@
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
+
+    # c/c++
+    gcc
+    gcc-arm-embedded
+    libgcc
+    libcxx
+    libstdcxx5
+    binutils
+    gnumake
+    cmake
+    extra-cmake-modules
+    glxinfo
+
     nh
     vim
     neovim
