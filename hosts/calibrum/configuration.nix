@@ -6,6 +6,7 @@
 
 {
   imports = [ # Include the results of the hardware scan.
+    ../../modules/system/default.nix
     ./hardware-configuration.nix
     ./drives.nix
     inputs.home-manager.nixosModules.default
@@ -49,13 +50,13 @@
       [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  #   package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  #   portalPackage =
+  #     inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+  # };
 
   hardware.pulseaudio.enable = false;
 
@@ -138,17 +139,17 @@
     theme = "catppuccin-mocha";
   };
 
-  xdg = {
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      config = {
-        common.default = [ "gtk" ];
-        hyprland.default = [ "gtk" "hyprland" ];
-      };
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    };
-  };
+  # xdg = {
+  #   portal = {
+  #     enable = true;
+  #     xdgOpenUsePortal = true;
+  #     config = {
+  #       common.default = [ "gtk" ];
+  #       hyprland.default = [ "gtk" "hyprland" ];
+  #     };
+  #     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #   };
+  # };
 
   # stylix.enable = true;
   home-manager.backupFileExtension = "backup";
