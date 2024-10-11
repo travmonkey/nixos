@@ -3,7 +3,7 @@
 {
 
   imports = [
-    (../../modules/home/default.nix)
+    (../../modules/home/calibrum.nix)
     inputs.spicetify-nix.homeManagerModules.default
   ];
 

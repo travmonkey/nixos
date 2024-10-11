@@ -71,7 +71,7 @@
 
   fonts.packages = with pkgs; [ nerdfonts noto-fonts-emoji ];
 
-  networking.hostName = "travis-nixos"; # Define your hostname.
+  networking.hostName = "calibrum"; # Define your hostname.
   networking.networkmanager.enable =
     true; # Easiest to use and most distros use this by default.
 
