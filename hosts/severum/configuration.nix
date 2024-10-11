@@ -2,8 +2,15 @@
 { pkgs, inputs, ... }:
 
 {
-  imports =
-    [ ./hardware-configuration.nix inputs.home-manager.nixosModules.default ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/system/default.nix
+  ];
+
+  hyprland.enable = false;
+  gaming.enable = false;
+  terraria-server.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -31,8 +38,6 @@
     true; # Easiest to use and most distros use this by default.
 
   environment.sessionVariables = { FLAKE = "/home/aphelios/nixos"; };
-
-  virtualisation.docker.enable = true;
 
   # Enable ssh
   services.openssh.enable = true;

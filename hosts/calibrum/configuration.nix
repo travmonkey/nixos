@@ -89,7 +89,6 @@
       "audio"
       "video"
       "input"
-      "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
@@ -151,8 +150,6 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 3";
   };
-
-  virtualisation.docker.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
