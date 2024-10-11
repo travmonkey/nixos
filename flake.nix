@@ -31,7 +31,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.travis-nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         ./hosts/desktop/configuration.nix
         inputs.home-manager.nixosModules.default
@@ -39,7 +39,7 @@
       ];
     };
     nixosConfigurations.severum = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         ./hosts/severum/configuration.nix
         inputs.home-manager.nixosModules.default

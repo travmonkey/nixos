@@ -1,9 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [
-    kitty
-  ];
+  home.packages = with pkgs; [ kitty ];
 
   programs.kitty = lib.mkForce {
     enable = true;

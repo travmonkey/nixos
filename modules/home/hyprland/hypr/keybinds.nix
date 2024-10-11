@@ -120,7 +120,6 @@
       # ", xf86AudioMicMute, exec, $scripts/Volume.sh --toggle-mic #mute mic"
       # ", xf86audiomute, exec, $scripts/Volume.sh --toggle"
 
-
       ## APPLICATIONS
       # browser
       "$mod SHIFT, Q, exec, librewolf"
@@ -147,9 +146,8 @@
       # Clipboard Manager
       "$mod SHIFT, V, exec, $scripts/ClipManager.sh"
 
-
     ];
-    
+
     bindr = [
       "Ctrl+Super, R, exec, killall .ags-wrapped ydotool; ags & # Restart widgets"
     ];

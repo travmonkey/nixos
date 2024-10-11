@@ -1,13 +1,11 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    dunst
-  ];
+  home.packages = with pkgs; [ dunst ];
 
   services.dunst = {
     enable = false;
-    
+
     settings = {
       global = {
         monitor = 1;

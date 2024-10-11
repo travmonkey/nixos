@@ -38,20 +38,21 @@
 
       label = [
         {
-        monitor = "DP-1";
-        text = ''cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S $p") </big></b>"'';
-        color = "rgb(177, 98, 134)";
-        font_size = "64";
-        font_family = "Mononoki Nerd Font 10";
-        shadow_passes = "3";
-        shadow_size = "4";
+          monitor = "DP-1";
+          text = ''
+            cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S $p") </big></b>"'';
+          color = "rgb(177, 98, 134)";
+          font_size = "64";
+          font_family = "Mononoki Nerd Font 10";
+          shadow_passes = "3";
+          shadow_size = "4";
 
-        position = "0, 16";
-        halign = "center";
-        valign = "center";
+          position = "0, 16";
+          halign = "center";
+          valign = "center";
         }
         {
-          monitor  = "DP-1";
+          monitor = "DP-1";
           text = "Hey $USER";
           color = "rgb(177, 98, 134)";
           font_size = 18;

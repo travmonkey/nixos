@@ -2,25 +2,25 @@
 
 {
   programs.spicetify =
-  let spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in {
-    enable = true;
+    let spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in {
+      enable = true;
 
-    theme = spicePkgs.themes.text;
-    colorScheme = "gruvbox";
+      theme = spicePkgs.themes.text;
+      colorScheme = "gruvbox";
 
-    enabledExtensions = with spicePkgs.extensions; [
-      trashbin
-      shuffle
-      groupSession
-      skipStats
-      beautifulLyrics
-    ];
-    enabledCustomApps = with spicePkgs.apps; [
-      marketplace
-      betterLibrary
-      newReleases
-      lyricsPlus
-    ];
-  };
+      enabledExtensions = with spicePkgs.extensions; [
+        trashbin
+        shuffle
+        groupSession
+        skipStats
+        beautifulLyrics
+      ];
+      enabledCustomApps = with spicePkgs.apps; [
+        marketplace
+        betterLibrary
+        newReleases
+        lyricsPlus
+      ];
+    };
 }

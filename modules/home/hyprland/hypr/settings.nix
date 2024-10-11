@@ -11,7 +11,7 @@
       "col.inactive_border" = "rgb(83a598)";
       layout = "dwindle";
     };
-    
+
     dwindle = {
       preserve_split = true;
       pseudotile = true;
@@ -74,14 +74,14 @@
     };
 
     input = {
-      kb_layout="us";
-      repeat_rate=50;
-      repeat_delay=300;
-      numlock_by_default=1;
-      left_handed=0;
-      follow_mouse=1;
-      float_switch_override_focus=0;
-      accel_profile="flat";
+      kb_layout = "us";
+      repeat_rate = 50;
+      repeat_delay = 300;
+      numlock_by_default = 1;
+      left_handed = 0;
+      follow_mouse = 1;
+      float_switch_override_focus = 0;
+      accel_profile = "flat";
     };
 
     misc = {
@@ -93,8 +93,6 @@
       swallow_regex = "^(kitty)$";
     };
 
-    xwayland = {
-      force_zero_scaling = true;
-    };
+    xwayland = { force_zero_scaling = true; };
   };
 }

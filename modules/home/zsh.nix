@@ -26,10 +26,14 @@
       # Don't need these any more as I switched to nh
       # eza for ls replacement:
       lr = "eza -l --git --no-filesize --icons=always --no-time";
-      lt = "eza -l --git --no-filesize --icons=always --no-time --tree --level=2";
-      ata = "eza -l --git --no-filesize --icons=always --no-time --tree --level=2 -all";
-      att = "eza -l --git --no-filesize --icons=always --no-time --tree --level=3";
-      alta = "eza -l --git --no-filesize --icons=always --no-time --tree --level=3 -all";
+      lt =
+        "eza -l --git --no-filesize --icons=always --no-time --tree --level=2";
+      ata =
+        "eza -l --git --no-filesize --icons=always --no-time --tree --level=2 -all";
+      att =
+        "eza -l --git --no-filesize --icons=always --no-time --tree --level=3";
+      alta =
+        "eza -l --git --no-filesize --icons=always --no-time --tree --level=3 -all";
       ls = "eza --git";
       la = "eza -l --git --no-filesize --icons=always --no-time --all";
 
@@ -51,13 +55,13 @@
 
       # pokemon-colorscripts -r
 
-      
+
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
       # source /home/travis/.oh-my-zsh/custom/themes/pure.zsh
     '';
 
-    plugins = [ 
+    plugins = [
       # "git"
       {
         name = "zsh-autosuggestions";
@@ -73,12 +77,10 @@
         src = builtins.fetchGit {
           url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
           rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
-        }; 
+        };
       }
     ];
 
-    oh-my-zsh = {
-      enable = true;
-    };
+    oh-my-zsh = { enable = true; };
   };
 }

@@ -2,11 +2,10 @@
 
 {
 
-  imports = 
-    [
-      (../../modules/home/default.nix)
-      inputs.spicetify-nix.homeManagerModules.default
-    ];
+  imports = [
+    (../../modules/home/default.nix)
+    inputs.spicetify-nix.homeManagerModules.default
+  ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -63,17 +62,16 @@
       allowUnfreePredicate = (_: true);
     };
   };
-  
+
   xdg.desktopEntries = {
     "kicad" = {
       name = "KiCad (xwayland)";
       exec = "env QT_QPA_PLATFORM=xwayland kicad";
       terminal = false;
       icon = "kicad";
-      categories = ["Development" "Electronics"];
+      categories = [ "Development" "Electronics" ];
     };
   };
-
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -137,9 +135,7 @@
   #
   #  /etc/profiles/per-user/travis/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

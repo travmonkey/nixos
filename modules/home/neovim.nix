@@ -15,12 +15,13 @@
     nil # nix
 
     # Formatters
-    stylua 
+    stylua
     biome
     isort
     shfmt
     mdformat
     nodePackages_latest.prettier
+    haskellPackages.nixfmt
 
     # Linters
     eslint_d

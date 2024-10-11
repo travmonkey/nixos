@@ -5,13 +5,12 @@
 { pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./drives.nix
-      inputs.home-manager.nixosModules.default
-    ];
-  
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./drives.nix
+    inputs.home-manager.nixosModules.default
+  ];
+
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowUnfreePredicate = _: true;
 
@@ -21,7 +20,6 @@
       experimental-features = nix-command flakes
     '';
   };
-
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -37,23 +35,28 @@
     };
   };
 
-  boot.kernelParams = [ "processor.max_cstate=4" "amd_iomu=soft" "idle=nomwait" "intel_pstate=disable"];
+  boot.kernelParams = [
+    "processor.max_cstate=4"
+    "amd_iomu=soft"
+    "idle=nomwait"
+    "intel_pstate=disable"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    
   nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys =
+      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
-
 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
-  
+
   hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
@@ -63,19 +66,14 @@
     alsa.enable = true;
     alsa.support32Bit = true;
 
-    wireplumber = {
-      enable = true;
-    };
+    wireplumber = { enable = true; };
   };
 
-
-  fonts.packages = with pkgs; [
-    nerdfonts
-    noto-fonts-emoji
-  ];
+  fonts.packages = with pkgs; [ nerdfonts noto-fonts-emoji ];
 
   networking.hostName = "travis-nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Denver";
@@ -89,18 +87,23 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.travis = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+      "input"
+      "docker"
+    ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
-  
+
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "travis" = import ./home.nix;
-    };
+    users = { "travis" = import ./home.nix; };
   };
-  
+
   # Setting up steam and graphics drivers
   hardware.graphics.enable = true;
   services.xserver.enable = true;
@@ -114,9 +117,12 @@
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall =
+      true; # Open ports in the firewall for Steam Local Network Game Transfers
     gamescopeSession.enable = true;
   };
 
@@ -137,12 +143,10 @@
       enable = true;
       xdgOpenUsePortal = true;
       config = {
-        common.default = ["gtk"];
-        hyprland.default = ["gtk" "hyprland"];
+        common.default = [ "gtk" ];
+        hyprland.default = [ "gtk" "hyprland" ];
       };
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-      ];
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
   };
 
@@ -156,9 +160,7 @@
 
   services.zerotierone.enable = true;
 
-  environment.sessionVariables = {
-    FLAKE = "/home/travis/nixos";
-  };
+  environment.sessionVariables = { FLAKE = "/home/travis/nixos"; };
 
   programs.nh = {
     enable = true;
@@ -235,7 +237,7 @@
 
     # editors
     neovim
-    vim 
+    vim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

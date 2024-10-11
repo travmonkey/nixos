@@ -15,7 +15,8 @@
     cliphist
   ];
 
-  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+  systemd.user.targets.hyprland-session.Unit.Wants =
+    [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     enable = true;

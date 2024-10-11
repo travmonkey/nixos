@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    waybar
-  ];
-
+  home.packages = with pkgs; [ waybar ];
 
   programs.waybar = {
     enable = true;
@@ -18,9 +15,24 @@
         reload_style_on_change = true;
 
         # Layour of the bar
-        modules-left = [ "custom/logo" "clock" "disk" "memory" "cpu" "temperature" "custom/powerDraw" "hyprland/window" ];
+        modules-left = [
+          "custom/logo"
+          "clock"
+          "disk"
+          "memory"
+          "cpu"
+          "temperature"
+          "custom/powerDraw"
+          "hyprland/window"
+        ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "tray" "idle_inhibitor" "custom/colorpicker" "pulseaudio" "network" ];
+        modules-right = [
+          "tray"
+          "idle_inhibitor"
+          "custom/colorpicker"
+          "pulseaudio"
+          "network"
+        ];
 
         # Module config
         "hyprland/workspaces" = {
@@ -78,15 +90,18 @@
         "idle_inhibitor" = {
           format = "<span font='12'>{icon} </span>";
           format-icons = {
-            activated ="󰈈";
-            deactivated ="󰈉";
+            activated = "󰈈";
+            deactivated = "󰈉";
           };
         };
 
         "clock" = {
           format = "<span color = '#458588'>{:%A, %B %d - %I:%M:%S %p}</span>";
           interval = 1;
-          tooltip-format = "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          tooltip-format = ''
+
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>'';
           calendar-weeks-pos = "right";
           today-format = "<span color='#7645AD'><b><u>{}</u></b></span>";
           format-calendar = "<span color='#aeaeae'><b>{}</b></span>";
@@ -100,16 +115,14 @@
           path = "/";
         };
 
-        "memory" = {
-          format = "  {percentage}%";
-        };
-        
+        "memory" = { format = "  {percentage}%"; };
+
         "cpu" = {
           interval = 1;
           format = "  {usage}%";
           min-length = 6;
           max-length = 6;
-          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
         };
 
         "temperature" = {
@@ -122,7 +135,7 @@
 
         "pulseaudio" = {
           format = "{volume}% {icon}";
-          format-bluetooth ="󰂰";
+          format-bluetooth = "󰂰";
           format-muted = "<span font='12'></span>";
           format-icons = {
             headphones = "";
@@ -132,7 +145,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = ["" " " " "];
+            default = [ "" " " " " ];
           };
         };
 
