@@ -2,11 +2,8 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = 
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports =
+    [ ./hardware-configuration.nix inputs.home-manager.nixosModules.default ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -17,10 +14,10 @@
     '';
   };
 
-  users.users.aphelios = {                               
-    isNormalUser = true;                                 
-    description = "aphelios";                            
-    extraGroups = [ "networkmanager" "wheel" "docker" ];          
+  users.users.aphelios = {
+    isNormalUser = true;
+    description = "aphelios";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -30,11 +27,10 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "severum"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
-  environment.sessionVariables = {
-    FLAKE = "/home/aphelios/nixos";
-  };
+  environment.sessionVariables = { FLAKE = "/home/aphelios/nixos"; };
 
   virtualisation.docker.enable = true;
 
@@ -51,9 +47,7 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "aphelios" = import ./home.nix;
-    };
+    users = { "aphelios" = import ./home.nix; };
     backupFileExtension = "backup";
   };
 
@@ -92,7 +86,7 @@
     LC_NUMERIC = "en_US.UTF-8";
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";                              
+    LC_TIME = "en_US.UTF-8";
   };
 
   system.stateVersion = "24.05";

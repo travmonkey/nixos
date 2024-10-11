@@ -2,10 +2,7 @@
 
 {
 
-  imports = 
-    [
-      (../../modules/home/severum.nix)
-    ];
+  imports = [ (../../modules/home/severum.nix) ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -30,8 +27,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-  ];
+  home.packages = with pkgs; [ ];
 
   home.file.".zshrc".text = ''
     export ZSH_CUSTOM="${config.home.homeDirectory}/.oh-my-zsh/custom"
@@ -53,9 +49,7 @@
   #
   #  /etc/profiles/per-user/travis/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
