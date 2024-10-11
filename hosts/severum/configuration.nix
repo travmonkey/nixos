@@ -56,10 +56,10 @@
     backupFileExtension = "backup";
   };
 
+  services.zerotierone.enable = true;
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
-
     # c/c++
     gcc
     gcc-arm-embedded
@@ -71,6 +71,7 @@
     cmake
     extra-cmake-modules
     glxinfo
+    zerotierone
 
     nh
     vim
