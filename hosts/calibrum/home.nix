@@ -86,6 +86,7 @@
   # environment.
   home.packages = with pkgs; [
     font-manager
+    discord-screenaudio
     vesktop
     gimp
     bemoji
