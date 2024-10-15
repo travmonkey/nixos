@@ -193,7 +193,6 @@
     # audio control
     pavucontrol
     easyeffects
-    spotify
     myxer
 
     # fetchers
