@@ -84,6 +84,10 @@
       accel_profile = "flat";
     };
 
+    binds = {
+      scroll_event_delay = 0;
+    };
+
     misc = {
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
