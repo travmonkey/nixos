@@ -86,6 +86,7 @@
   # environment.
   home.packages = with pkgs; [
     spotify
+    onlyoffice-bin
     font-manager
     discord-screenaudio
     vesktop
