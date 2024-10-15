@@ -89,7 +89,7 @@
         };
 
         "clock" = {
-          format = "<span color = '#458588'>{:%A, %B %d - %I:%M:%S %p}</span>";
+          format = "<span color = '#8ec07c'>{:%A, %B %d - %I:%M:%S %p}</span>";
           interval = 1;
           tooltip-format = ''
 
