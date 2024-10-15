@@ -8,8 +8,8 @@
     themeFile = "GruvboxMaterialDarkMedium";
 
     font = {
-      name = "VictorMonoNerdFont";
-      size = 14.0;
+      name = "MonofurNerdFont";
+      size = 16.0;
     };
 
     settings = {
