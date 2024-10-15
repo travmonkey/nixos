@@ -11,7 +11,7 @@
       "hyprctl setcursor Bibata-Modern-Ice 24"
 
       # starup apps
-      "ags &"
+      "waybar &"
       "hypridle &"
       "hyprpm reload"
 

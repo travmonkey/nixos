@@ -149,7 +149,7 @@
     ];
 
     bindr = [
-      "Ctrl+Super, R, exec, killall .ags-wrapped ydotool; ags & # Restart widgets"
+      "Ctrl+Super, R, exec, killall .waybar-wrapped ydotool; waybar &"
     ];
 
     bindle = [

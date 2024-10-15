@@ -15,23 +15,16 @@
         reload_style_on_change = true;
 
         # Layour of the bar
-        modules-left = [
-          "custom/logo"
-          "clock"
-          "disk"
-          "memory"
-          "cpu"
-          "temperature"
-          "custom/powerDraw"
-          "hyprland/window"
-        ];
-        modules-center = [ "hyprland/workspaces" ];
+        modules-left = [ "hyprland/window" ];
+        modules-center =
+          [ "cpu" "memory" "disk" "temperature" "hyprland/workspaces" "clock" ];
         modules-right = [
           "tray"
           "idle_inhibitor"
           "custom/colorpicker"
           "pulseaudio"
           "network"
+          "custom/logo"
         ];
 
         # Module config
@@ -164,79 +157,93 @@
       };
     };
 
+    # Styling
     style = ''
+
       * {
         border: none;
         font-size: 14px;
-        font-family: "MononokiNerdFond" ;
+        font-family: "MononokiNerdFond";
         min-height: 18px;
       }
 
       window#waybar {
-        background: transparent;
+        background: #282828;
         margin: 20px;
-       }
+      }
 
       #custom-logo {
         padding: 1px 8px 0 10px;
       }
 
+      #workspaces {
+        border-radius: 8px;
+        padding: 0 10px;
+        margin: 0 2px 0 2px;
+        background: #3c3836;
+      }
+
       #workspaces button {
-        background: #282828;
-        padding: 1px 4px;
-        margin: 2px;
+        background: #504945;
+        padding: 2px 4px;
+        margin: 1px 2px 1px 2px;
         border-radius: 20px;
         border-style: solid;
         border-width: 1px;
-        border-color: #ebdbb2;
-        transition: all 0.3s ease-in-out;
+        border-color: #3c3836;
+        color: #ebdbb2;
+        transition: all 0.2s ease-in-out;
       }
 
       #workspaces button.empty {
-        background: #282828;
+        background: #3c3836;
         padding: 1px 4px;
-        margin: 2px;
+        margin: 1px 2px;
         border-radius: 20px;
         border-style: solid;
-        border-color: #282828;
+        border-color: #3c3836;
+        color: #928374;
       }
 
       #workspaces button.visible {
         padding: 1px 16px;
-        border-color: #d65d0e;
-        transition: all 0.3s ease-in-out;
-        color: #d65d0e;
+        border-color: #b16286;
+        background: #b16286;
+        transition: all 0.2s ease-in-out;
+        color: #ebdbb2;
       }
 
       .modules-right {
         padding-left: 5px;
-        border-radius: 20px;
+        border-radius: 8px;
         border-style: solid;
         border-width: 1px;
-        border-color: #d65d0e;
-        margin-top: 8px;
+        border-color: #282828;
+        margin-top: 4px;
+        margin-bottom: 4px;
         margin-right: 8px;
         background: #282828;
       }
 
       .modules-center {
-        padding: 0 15px;
-        margin-top: 8px;
-        border-radius: 20px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-radius: 8px;
         border-style: solid;
         border-width: 1px;
-        border-color: #d65d0e;
+        border-color: #282828;
         background: #282828;
       }
 
       .modules-left {
-        border-radius: 20px;
+        border-radius: 8px;
         border-style: solid;
         border-width: 1px;
-        border-color: #d65d0e;
-        margin-top: 8px;
+        border-color: #3c3836;
+        margin-top: 4px;
+        margin-bottom: 4px;
         margin-left: 8px;
-        background: #282828;
+        background: #3c3836;
       }
 
       #battery,
@@ -249,6 +256,7 @@
       #disk,
       #memory,
       #backlight,
+      #custom-logo,
       #cpu,
       #temperature,
       #custom-weather,
@@ -257,60 +265,81 @@
       #tray,
       #window,
       #clock {
-        background-color: #282828;
-        border-radius: 20px;
-        padding: 0 5px;
+        border-radius: 8px;
+        background-color: #3c3836;
         color: #ebdbb2;
       }
 
-      #custom-weather,
       #disk,
       #cpu,
       #memory,
       #temperature,
-      #window {
-        padding-top: 1px;
+      #clock {
+        border-radius: 8px;
+        margin: 0 2px 0 2px;
+        padding: 1px 6px 0px 6px;
+      }
+
+      #cpu {
+        padding: 1px 3px 0px 3px;
+        color: #d3869b;
+      }
+
+      #memory {
+        color: #83a598;
+      }
+
+      #disk {
+        color: #fabd2f;
+      }
+
+      #temperature {
+        color: #8ec07c;
+      }
+
+      #clock {
+        font-size: 16px;
+        padding: 1px 8px 0px 8px;
       }
 
       #custom-weather {
         color: #fabd2f;
       }
 
+
+      #pulseaudio,
+      #network, 
+      #idle_inhibitor,
+      #custom-logo {
+        border-radius: 8px;
+        margin: 0 2px 0 2px;
+        padding: 1px 6px 0px 6px;
+      }
+
+      #idle_inhibitor {
+        padding: 1px 6px 0px 11px;
+        color: #fabd2f;
+      }
+
       #pulseaudio {
-        padding-top: 3px;
-      }
-
-      #disk {
-        color: #8ec07c;
-      }
-
-      #memory {
-        padding-right: 0px;
-        color: #83a598;
-      }
-
-      #cpu {
-        padding-right: 0px;
-        color: #b16286;
-      }
-
-      #clock {
-        padding-left: 0px;
-        padding-top: 3px;
-        color: #b16286;
+        padding: 1px 8px 0px 8px;
+        color: #fe8019;
       }
 
       #network {
-        padding-right: 8px;
+        color: #8ec07c;
+      }
+
+      #custom-logo {
+        font-size: 16px;
+        padding: 1px 6px 0px 8px;
+        color: #458588;
       }
 
       #window {
-        padding-right: 8px;
+        padding: 1px 8px 0px 8px;
       }
 
-      #temperature {
-        color: #83a598;
-      }
 
       #temperature.critical,
       #pulseaudio.muted {
@@ -318,13 +347,13 @@
         padding-top: 0;
       }
 
-      #clock{
+      #clock {
         color: #5fd1fa;
       }
 
       #battery.charging {
         color: #ffffff;
-        background-color: #26A65B;
+        background-color: #26a65b;
       }
 
       #battery.warning:not(.charging) {
