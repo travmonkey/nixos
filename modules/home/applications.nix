@@ -2,36 +2,41 @@
 
 {
   home.packages = with pkgs; [
+    # File management
+    nemo
+    peazip
+    qdirstat
+    qbittorrent
 
-
-
+    # File viewing / editing
     onlyoffice-bin
+    zathura
+    gimp
+    mpv
+    qimgv
+
+    # Settings applications
+    blueberry
+    via
+    openrgb-with-all-plugins
+
+    # Fonts
     font-manager
+    bemoji
+
+    # Games
+    heroic
     discord-screenaudio
     vesktop
-    gimp
-    bemoji
-    qdirstat
+
+    # Development
     btop
-    vivaldi
-    # bitwarden-desktop
-    asdf-vm
-    gamemode
-    gamescope
-    uptimed
     lazygit
-    ripgrep
-    fd
-    librewolf
-    nemo
-    obs-studio
-    peaz
-    zathura
-    qimgv
-    heroic
-    qbittorrent
     # kicad
-    mpv
-    blueberry
+
+    # Other
+    # bitwarden-desktop
+    librewolf
+    obs-studio
   ];
 }
