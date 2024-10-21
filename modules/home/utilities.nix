@@ -19,8 +19,12 @@
     fd
     appimage-run
     killall
-    swappy
     wf-recorder
+
+    # screenshot
+    swappy
+    grim
+    slurp
 
     # Game stuff
     asdf-vm

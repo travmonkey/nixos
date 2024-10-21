@@ -37,6 +37,8 @@
         "video/quicktime" = "mpv.desktop";
         "video/x-ms-wmv" = "mpv.desktop";
         "video/webm" = "mpv.desktop";
+
+        "application/pdf" = "zathura.desktop";
       };
     };
   };
@@ -84,43 +86,6 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    spotify
-    onlyoffice-bin
-    font-manager
-    discord-screenaudio
-    vesktop
-    gimp
-    bemoji
-    qdirstat
-    btop
-    vivaldi
-    bitwarden-desktop
-    asdf-vm
-    gamemode
-    gamescope
-    uptimed
-    lazygit
-    ripgrep
-    fd
-    librewolf
-    nemo
-    obs-studio
-    peazip
-    zathura
-    qimgv
-    heroic
-    qbittorrent
-    libreoffice
-    kicad
-    mpv
-
-    # tools
-    via
-    openrgb-with-all-plugins
-    appimage-run
-    killall
-  ];
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
