@@ -13,6 +13,8 @@
       # starup apps
       "waybar &"
       "hypridle &"
+      "nm-applet &"
+      "swaync &"
       "hyprpm reload"
 
       # wallpapers

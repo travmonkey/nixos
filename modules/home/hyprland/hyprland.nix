@@ -6,13 +6,16 @@
     hypridle
     hyprlock
     hyprpicker
+    cliphist
+    swaynotificationcenter
+    networkmanagerapplet
     rofi-wayland
     blueman
     swww
     brightnessctl
     pamixer
     playerctl
-    cliphist
+    jq
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants =
@@ -46,8 +49,5 @@
         "MOZ_ENABLE_WAYLAND,1"
       ];
     };
-    plugins = [
-      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-    ];
   };
 }

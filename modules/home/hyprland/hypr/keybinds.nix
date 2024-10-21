@@ -35,27 +35,27 @@
 
       ## WORKSPACES
       # Switch to workspace
-      "$mod, 1, split-workspace, 1"
-      "$mod, 2, split-workspace, 2"
-      "$mod, 3, split-workspace, 3"
-      "$mod, 4, split-workspace, 4"
-      "$mod, 5, split-workspace, 5"
-      "$mod, 6, split-workspace, 6"
-      "$mod, 7, split-workspace, 7"
-      "$mod, 8, split-workspace, 8"
-      "$mod, 9, split-workspace, 9"
-      "$mod, 0, split-workspace, 10"
+      "$mod, 1, exec, $scripts/workspaceSwitching.sh 1"
+      "$mod, 2, exec, $scripts/workspaceSwitching.sh 2"
+      "$mod, 3, exec, $scripts/workspaceSwitching.sh 3"
+      "$mod, 4, exec, $scripts/workspaceSwitching.sh 4"
+      "$mod, 5, exec, $scripts/workspaceSwitching.sh 5"
+      "$mod, 6, exec, $scripts/workspaceSwitching.sh 6"
+      "$mod, 7, exec, $scripts/workspaceSwitching.sh 7"
+      "$mod, 8, exec, $scripts/workspaceSwitching.sh 8"
+      "$mod, 9, exec, $scripts/workspaceSwitching.sh 9"
+      "$mod, 0, exec, $scripts/workspaceSwitching.sh 10"
       # Switch to workspace and bring window
-      "$mod SHIFT, 1, split-movetoworkspace, 1"
-      "$mod SHIFT, 2, split-movetoworkspace, 2"
-      "$mod SHIFT, 3, split-movetoworkspace, 3"
-      "$mod SHIFT, 4, split-movetoworkspace, 4"
-      "$mod SHIFT, 5, split-movetoworkspace, 5"
-      "$mod SHIFT, 6, split-movetoworkspace, 6"
-      "$mod SHIFT, 7, split-movetoworkspace, 7"
-      "$mod SHIFT, 8, split-movetoworkspace, 8"
-      "$mod SHIFT, 9, split-movetoworkspace, 9"
-      "$mod SHIFT, 0, split-movetoworkspace, 10"
+      "$mod SHIFT, 1, exec, $scripts/workspaceSwitching.sh 1 --move"
+      "$mod SHIFT, 2, exec, $scripts/workspaceSwitching.sh 2 --move"
+      "$mod SHIFT, 3, exec, $scripts/workspaceSwitching.sh 3 --move"
+      "$mod SHIFT, 4, exec, $scripts/workspaceSwitching.sh 4 --move"
+      "$mod SHIFT, 5, exec, $scripts/workspaceSwitching.sh 5 --move"
+      "$mod SHIFT, 6, exec, $scripts/workspaceSwitching.sh 6 --move"
+      "$mod SHIFT, 7, exec, $scripts/workspaceSwitching.sh 7 --move"
+      "$mod SHIFT, 8, exec, $scripts/workspaceSwitching.sh 8 --move"
+      "$mod SHIFT, 9, exec, $scripts/workspaceSwitching.sh 9 --move"
+      "$mod SHIFT, 0, exec, $scripts/workspaceSwitching.sh 10 --move"
       # Cycle through workspaces
       "$mod SHIFT, bracketleft, movetoworkspace, -1"
       "$mod SHIFT, bracketright, movetoworkspace, +1"
@@ -72,8 +72,10 @@
       "$mod SHIFT, G, movetoworkspace, 20"
 
       # Scroll wheel navigation
-      "$mod SHIFT, mouse_down, split-movetoworkspace, m-1"
-      "$mod SHIFT, mouse_up, split-movetoworkspace, m+1"
+      "$mod SHIFT, mouse_down, movetoworkspace, m-1"
+      "$mod SHIFT, mouse_up, movetoworkspace, m+1"
+      # "$mod SHIFT, mouse_down, split-movetoworkspace, m-1"
+      # "$mod SHIFT, mouse_up, split-movetoworkspace, m+1"
       "$mod, mouse_down, workspace, m-1"
       "$mod, mouse_up, workspace, m+1"
 
@@ -82,12 +84,12 @@
       # "$mod SHIFT, M movetoworkspace, special"
 
       ## END-4 Widgets
-      "$mod, A, exec, ags -t 'sideleft'"
-      "$mod, D, exec, ags -t 'sideright'"
-      "$mod, N, exec, ags run-js 'openMusicControls.value = (!mpris.getPlayer() ? false : !openMusicControls.value);' # Toggle music controls"
-      "SUPER, Tab, exec, ags -t 'overview'"
-      "Ctrl+$mod, Slash, exec, pkill anyrun || anyrun # Toggle fallback launcher: anyrun"
-      "$mod, Slash, exec, ags run-js 'openColorScheme.value = true; Utils.timeout(2000, () => openColorScheme.value = false);'"
+      # "$mod, A, exec, ags -t 'sideleft'"
+      # "$mod, D, exec, ags -t 'sideright'"
+      # "$mod, N, exec, ags run-js 'openMusicControls.value = (!mpris.getPlayer() ? false : !openMusicControls.value);' # Toggle music controls"
+      # "SUPER, Tab, exec, ags -t 'overview'"
+      # "Ctrl+$mod, Slash, exec, pkill anyrun || anyrun # Toggle fallback launcher: anyrun"
+      # "$mod, Slash, exec, ags run-js 'openColorScheme.value = true; Utils.timeout(2000, () => openColorScheme.value = false);'"
 
       ## STANDARD CONTROLS
       # fullscreen
