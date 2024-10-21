@@ -23,7 +23,6 @@
           "idle_inhibitor"
           "custom/colorpicker"
           "pulseaudio"
-          "network"
           "custom/logo"
         ];
 
@@ -32,11 +31,9 @@
           disable-scroll = true;
           all-outputs = false;
           format = "{icon}";
-          persistent-workspaces = [
-            "'HDMI-A-1': [1, 2, 3, 4, 5]"
-            "'DP-1': [11, 12, 13, 14, 15]"
-            "'DP-2': [21, 22, 23, 24, 25]"
-          ];
+          persistent-workspaces = {
+            "*" = 10;
+          };
 
           format-icons = {
             "1" = "一";
@@ -75,9 +72,9 @@
         "custom/logo" = {
           format = " ";
           exec = "echo ; echo 󰟡 power // blur";
-          on-click = "/home/travis/nixos/scripts/hypr/Wlogout.sh";
+          on-click = "swaync-client -t -sw";
           interval = "86400";
-          tooltip = true;
+          tooltip = false;
         };
 
         "idle_inhibitor" = {
@@ -104,17 +101,17 @@
 
         "disk" = {
           interval = 30;
-          format = "  {percentage_used}%";
+          format = "  {percentage_used}%";
           path = "/";
         };
 
-        "memory" = { format = "  {percentage}%"; };
+        "memory" = { format = "   {percentage}%"; };
 
         "cpu" = {
           interval = 1;
-          format = "  {usage}%";
+          format = "  {usage}%";
           min-length = 6;
-          max-length = 6;
+          max-length = 7;
           format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
         };
 
@@ -185,7 +182,7 @@
 
       #workspaces button {
         background: #504945;
-        padding: 2px 4px;
+        padding: 0px 4px;
         margin: 1px 2px 1px 2px;
         border-radius: 20px;
         border-style: solid;
@@ -206,7 +203,8 @@
       }
 
       #workspaces button.visible {
-        padding: 1px 16px;
+        padding: 0px 16px;
+        margin: 1px 2px 1px 2px;
         border-color: #b16286;
         background: #b16286;
         transition: all 0.2s ease-in-out;
@@ -268,6 +266,10 @@
         border-radius: 8px;
         background-color: #3c3836;
         color: #ebdbb2;
+      }
+
+      #tray {
+        padding: 1px 6px
       }
 
       #disk,
