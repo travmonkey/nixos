@@ -9,7 +9,7 @@
 Compositor: Hyprland  
 Terminal: Kitty  
 Shell: ZSH  
-Bar and widgets: Using a modified [end-4](https://github.com/end-4/dots-hyprland) ags config  
+Bar: Waybar  
 Wallpaper: swww  
 App Launcher: Rofi  
 File Explorer: Ranger + Nemo  
@@ -89,6 +89,5 @@ managed by home-manager already.
 
 Look into ```modules/home/hyprland/hypr/keybinds.nix``` for my keybinds until I create a cheat-sheet.  
 Look into ```modules/home/hyprland/hypr/monitors.nix``` for monitor configurations.  
-Also look into ```unmanagedDots/ags/user_options.js``` for quick ags settings
 
 Hope you enjoy!
