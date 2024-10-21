@@ -14,6 +14,7 @@
 
   hyprland.enable = true;
   gaming.enable = true;
+  terraria-server.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowUnfreePredicate = _: true;
@@ -47,11 +48,11 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  nix.settings = {
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys =
-      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-  };
+  # nix.settings = {
+  #   substituters = [ "https://hyprland.cachix.org" ];
+  #   trusted-public-keys =
+  #     [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  # };
 
   hardware.pulseaudio.enable = false;
 
@@ -89,6 +90,7 @@
       "audio"
       "video"
       "input"
+      "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
@@ -172,6 +174,8 @@
     extra-cmake-modules
     glxinfo
 
+    go
+
     # wine
     wine
     winetricks
@@ -181,8 +185,6 @@
     rar
     gnutar
     unzip
-
-    # fonts
 
     # gtk / qt 
     gtk3
@@ -214,6 +216,8 @@
     # dotnetCorePackages.sdk_9_0
     # steamcmd
     mono
+
+    ddcutil
 
     # editors
     neovim
