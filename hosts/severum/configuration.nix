@@ -14,12 +14,14 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
+  # nix = {
+  #   package = pkgs.nixVersions.stable;
+  #   extraOptions = ''
+  #     experimental-features = nix-command flakes
+  #   '';
+  # };
+
+  nix.settings.experimental-features = [ "nix-command flakes" ];
 
   users.users.aphelios = {
     isNormalUser = true;
