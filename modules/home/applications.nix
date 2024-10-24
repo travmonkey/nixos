@@ -38,5 +38,7 @@
     # bitwarden-desktop
     librewolf
     obs-studio
+    teams-for-linux
+    stellarium
   ];
 }

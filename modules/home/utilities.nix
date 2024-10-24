@@ -14,7 +14,10 @@
     playerctl
     wlogout
 
+    hyprpicker
+
     # Utils
+    swayosd
     ripgrep
     fd
     appimage-run
