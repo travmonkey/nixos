@@ -13,7 +13,6 @@
   home.homeDirectory = "/home/travis";
 
   home.file = {
-    ".config/ags".source = ../../unmanagedDots/ags;
     ".config/rofi".source = ../../unmanagedDots/rofi;
   };
 
