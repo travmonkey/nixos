@@ -117,10 +117,10 @@
       ", xf86AudioNext, exec, playerctl next"
       ", xf86AudioPrev, exec, playerctl previous"
       ", xf86audiostop, exec, playerctl stop"
-      ", xf86audioraisevolume, exec, pamixer -i 5"
-      ", xf86audiolowervolume, exec, pamixer -d 5"
-      # ", xf86AudioMicMute, exec, $scripts/Volume.sh --toggle-mic #mute mic"
-      # ", xf86audiomute, exec, $scripts/Volume.sh --toggle"
+      ", xf86audioraisevolume, exec, swayosd-client --output-volume raise"
+      ", xf86audiolowervolume, exec, swayosd-client --output-volume lower"
+
+      # caps lock indicator
 
       ## APPLICATIONS
       # browser

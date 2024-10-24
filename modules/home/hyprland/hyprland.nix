@@ -5,10 +5,7 @@
     hyprcursor
     hypridle
     hyprlock
-    hyprpicker
     cliphist
-    swaynotificationcenter
-    networkmanagerapplet
     rofi-wayland
     blueman
     swww
@@ -16,7 +13,13 @@
     pamixer
     playerctl
     jq
+    swayosd
   ];
+
+  services.swayosd = {
+    enable = true;
+    display = "DP-1";
+  };
 
   systemd.user.targets.hyprland-session.Unit.Wants =
     [ "xdg-desktop-autostart.target" ];
