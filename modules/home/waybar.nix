@@ -17,7 +17,7 @@
         # Layour of the bar
         modules-left = [ "hyprland/window" ];
         modules-center =
-          [ "cpu" "memory" "disk" "temperature" "hyprland/workspaces" "clock" ];
+          [ "cpu" "memory" "disk" "temperature" "mpris" "hyprland/workspaces" "clock" ];
         modules-right = [
           "tray"
           "idle_inhibitor"
@@ -121,6 +121,16 @@
           interval = 1;
           critical-threshold = 80;
           on-click = "foot btop";
+        };
+
+        "mpris" = {
+          # player = "spotify";
+          format = "{status_icon}  |  {title} - {artist}";
+          status-icons = {
+            playing = " ";
+            paused = " ";
+            stopped = " ";
+          };
         };
 
         "pulseaudio" = {
@@ -259,6 +269,7 @@
       #temperature,
       #custom-weather,
       #idle_inhibitor,
+      #mpris,
       #jack,
       #tray,
       #window,
@@ -276,10 +287,15 @@
       #cpu,
       #memory,
       #temperature,
+      #mpris,
       #clock {
         border-radius: 8px;
         margin: 0 2px 0 2px;
         padding: 1px 6px 0px 6px;
+      }
+
+      #mpris {
+        color: #ebdbb2;
       }
 
       #cpu {
