@@ -28,11 +28,11 @@
       dim_inactive = true;
       dim_strength = 0.1;
 
-      drop_shadow = true;
-      shadow_range = 1;
-      shadow_render_power = 1;
-      "col.shadow" = "rgb(181926)";
-      "col.shadow_inactive" = "0x50000000";
+      # drop_shadow = true;
+      # shadow_range = 1;
+      # shadow_render_power = 1;
+      # "col.shadow" = "rgb(181926)";
+      # "col.shadow_inactive" = "0x50000000";
 
       blur = {
         enabled = true;
