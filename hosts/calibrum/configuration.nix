@@ -68,7 +68,12 @@
     wireplumber = { enable = true; };
   };
 
-  fonts.packages = with pkgs; [ nerdfonts noto-fonts-emoji ];
+  fonts.packages = with pkgs; [ 
+    nerd-fonts.noto
+    nerd-fonts.hack
+    nerd-fonts.victor-mono
+    nerd-fonts.monofur
+    noto-fonts-emoji ];
 
   networking.hostName = "calibrum"; # Define your hostname.
   networking.networkmanager.enable =
@@ -169,7 +174,6 @@
     gcc-arm-embedded
     libgcc
     libcxx
-    libstdcxx5
     binutils
     gnumake
     cmake
