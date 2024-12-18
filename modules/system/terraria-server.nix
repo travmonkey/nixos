@@ -5,6 +5,8 @@
     terraria-server.enable = lib.mkEnableOption "enable terraria server";
   };
 
+  # variable to store home username for absolute paths
+
   config = lib.mkIf config.terraria-server.enable {
 
     virtualisation.docker.enable = true;

@@ -103,8 +103,8 @@
       # split
       "$mod, S, togglesplit"
       # rofi
-      "$mod, R, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
-      "$mod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
+      "$mod, R, exec, pkill rofi || rofi -show drun -modi drun,run,window"
+      "$mod, SPACE, exec, pkill rofi || rofi -show drun -modi drun,run,window"
       # pin
       "$mod, P, pin"
       # rofi beats

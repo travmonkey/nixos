@@ -67,7 +67,6 @@
     gcc-arm-embedded
     libgcc
     libcxx
-    libstdcxx5
     binutils
     gnumake
     cmake

@@ -7,6 +7,7 @@
     peazip
     qdirstat
     qbittorrent
+    discord
 
     # File viewing / editing
     onlyoffice-bin
@@ -36,7 +37,9 @@
 
     # Other
     # bitwarden-desktop
+    slack
     librewolf
+    ungoogled-chromium
     obs-studio
     teams-for-linux
     stellarium

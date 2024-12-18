@@ -38,6 +38,8 @@
         "video/webm" = "mpv.desktop";
 
         "application/pdf" = "zathura.desktop";
+        # set default brower to firefox for xdg portal opening
+        "x-scheme-handler/http" = "librewolf.desktop";
       };
     };
   };
