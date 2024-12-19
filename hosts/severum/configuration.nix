@@ -31,9 +31,7 @@
   };
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
 
   networking.hostName = "severum"; # Define your hostname.
   networking.networkmanager.enable =
